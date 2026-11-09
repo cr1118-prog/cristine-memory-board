@@ -1,0 +1,104 @@
+/* =====================================================================
+   Theme motion: Kuromi-flavoured animation layer.
+   Loaded last so it can enhance the base components. Keyframes live in
+   animations.css. Everything here is transform / opacity / scale based
+   (cheap on phones), hover effects are gated to devices that hover, and
+   the global reduced-motion rule in animations.css switches it all off.
+   ===================================================================== */
+
+/* ---------- entrances ---------- */
+.title.rv:not(.in){transform:translateY(30px) scale(.94)}
+.intro.rv:not(.in){transform:translateY(20px) scale(.88)}
+.greet::after{display:inline-block;animation:beat 1.8s ease-in-out infinite}
+.stage-h.rv:not(.in){transform:translateY(-14px) scale(.96)}
+#inside{transform:translateY(24px) scale(.97)}
+#inside.in{transform:none}
+
+/* ---------- loader ---------- */
+#loader>div::before,#loader>div::after{content:"";position:absolute;left:50%;top:64px;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;border:2px solid rgba(255,143,200,.55);pointer-events:none;animation:ringOut 2.4s ease-out infinite}
+#loader>div::after{animation-delay:1.2s}
+
+/* ---------- hero ---------- */
+.title em .ch{animation-name:wv,glint;animation-duration:3.2s,4.5s}
+.hk::after{content:"";position:absolute;left:50%;bottom:-8px;width:96px;height:12px;translate:-50% 0;border-radius:50%;background:rgba(123,79,214,.28);filter:blur(5px);animation:shadow 3.2s ease-in-out infinite;pointer-events:none}
+.tape:hover .tape-in{animation-play-state:paused}
+
+/* rising hearts layer (generated in effects.js) */
+.rise{position:absolute;bottom:-40px;left:var(--x);font-style:normal;font-size:var(--s);color:var(--c);opacity:0;animation:rise var(--dur) linear infinite;animation-delay:var(--delay);will-change:transform}
+
+/* ---------- folder cards ---------- */
+.fdw{position:relative}
+.fdw::after{content:"✦";position:absolute;top:-34px;right:8%;font-size:18px;color:var(--pink);pointer-events:none;animation:twinkle 2.6s ease-in-out infinite;animation-delay:calc(var(--k)*.6s)}
+.fdw:nth-child(even)::after{right:auto;left:8%;color:var(--v2)}
+.fd{transform:perspective(700px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:translate .6s var(--ease),rotate .6s var(--ease),scale .5s var(--ease),opacity .5s,transform .25s ease-out}
+.fd.opening .kh{animation:peekUp .44s var(--ease) forwards}
+.fd:active .kh{transform:scale(1.1) rotate(5deg)}
+@media (hover:hover){.fd:hover .kh{animation:nod .8s ease-in-out}}
+
+/* ---------- gallery ---------- */
+.ph{animation:photoIn .85s var(--ease) both;animation-delay:calc(var(--n,0)*90ms)}
+.l-polaroid .ph{transform-origin:50% 0;animation:photoIn .85s var(--ease) both,sway 6s ease-in-out infinite;animation-delay:calc(var(--n,0)*90ms),calc(var(--n,0)*90ms + .9s)}
+.l-polaroid .ph:nth-child(even){animation-direction:normal,reverse}
+.l-masonry .ph:nth-child(even){animation:photoIn .85s var(--ease) both,floaty 6s ease-in-out infinite;animation-delay:calc(var(--n,0)*90ms),calc(var(--n,0)*90ms + .9s)}
+.l-duo .ph{animation:photoIn .85s var(--ease) both,glow 3.4s ease-in-out infinite;animation-delay:calc(var(--n,0)*90ms),calc(var(--n,0)*.5s)}
+.l-circles .ph{animation:photoIn .85s var(--ease) both,bubble 5s ease-in-out infinite;animation-delay:calc(var(--n,0)*90ms),calc(var(--n,0)*.8s + .9s)}
+.l-circles .ph::after{content:"";position:absolute;left:0;right:0;top:0;aspect-ratio:1;border-radius:50%;border:2px solid var(--v2);pointer-events:none;animation:ringOut 3.2s ease-out infinite;animation-delay:calc(var(--n,0)*.8s)}
+.l-cine .im img{animation:flicker 5s steps(1) infinite}
+.l-cine .ph::before,.l-cine .ph::after{background-size:calc(100% + 20px) 100%;animation:sprocket 1.6s linear infinite}
+
+/* ---------- food ---------- */
+.dish-img img{animation:kenburns 16s ease-in-out infinite alternate}
+.steps li,.ing li{animation:slideIn .6s var(--ease) both;animation-delay:calc(var(--n,0)*70ms)}
+.ing input:checked{animation:checkPop .4s var(--ease)}
+.ing input:checked+span{text-decoration:none}
+.ing span{background:linear-gradient(currentColor,currentColor) no-repeat 0 55%/0 2px;transition:background-size .45s var(--ease),color .3s}
+.ing input:checked+span{background-size:100% 2px}
+.steps li::before{transition:scale .4s var(--ease),background .3s}
+@media (hover:hover){.steps li:hover::before{scale:1.2;background:var(--pink);color:#fff}}
+
+/* ---------- movie ---------- */
+.mv{box-shadow:0 24px 40px -26px rgba(123,79,214,.8)}
+.cm[aria-pressed="true"] .av{animation:jmp .6s var(--ease)}
+.cm:active{scale:.95}
+.bio b,.bio span{display:inline-block;animation:slideIn .5s var(--ease) both}
+.bio span{animation-delay:.08s}
+
+/* ---------- song ---------- */
+.eq{display:inline-flex;align-items:flex-end;gap:3px;height:18px;margin-left:10px;vertical-align:middle}
+.eq i{width:4px;height:100%;border-radius:2px;background:var(--pink);transform-origin:50% 100%;transform:scaleY(.25)}
+.songname.playing .eq i{animation:eq .8s ease-in-out infinite alternate}
+.eq i:nth-child(2){animation-delay:-.25s!important;animation-duration:.6s!important}
+.eq i:nth-child(3){animation-delay:-.5s!important;animation-duration:.95s!important}
+.eq i:nth-child(4){animation-delay:-.1s!important;animation-duration:.7s!important}
+.lyr .now.swap{animation:swap .6s var(--ease)}
+
+/* ---------- jokes ---------- */
+.fc{transition:translate .4s var(--ease),scale .3s var(--ease);animation:wobble 6s ease-in-out infinite;animation-delay:calc(var(--n,0)*.9s + 1.5s)}
+.fc[aria-pressed="true"]{animation:none}
+.fc:active{scale:.97}
+.fc[aria-pressed="true"] .stk{animation:slotpop .9s .4s var(--ease) both,beat 2.2s 1.4s ease-in-out infinite}
+.slot.got{animation:beat 2.6s ease-in-out infinite}
+@media (hover:hover){.fc:hover{translate:0 -5px}}
+.pts{animation:glow 3s ease-in-out infinite;box-shadow:none}
+
+/* ---------- secret credits ---------- */
+.credits{position:relative}
+.credits::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(2px 2px at 12% 22%,var(--v2),transparent),radial-gradient(2px 2px at 78% 14%,var(--pink),transparent),radial-gradient(1.5px 1.5px at 40% 60%,var(--v1),transparent),radial-gradient(2px 2px at 88% 70%,var(--v2),transparent),radial-gradient(1.5px 1.5px at 22% 86%,var(--pink),transparent),radial-gradient(2px 2px at 60% 38%,var(--v3),transparent);animation:starBg 2.4s ease-in-out infinite alternate}
+.roll{position:relative}
+.roll b{text-shadow:0 0 18px rgba(255,143,200,.45)}
+
+/* ---------- toast + lightbox + top bar ---------- */
+#toast.on{animation:toastIn .5s var(--ease)}
+#lb.on #lb-img{animation:lbIn .7s var(--ease)}
+.lb-btn:active,#lb-x:active{scale:.9}
+.back-btn:active{transform:scale(.94)}
+@supports (animation-timeline:scroll()){
+  .topbar::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:linear-gradient(90deg,var(--v1),var(--pink));transform-origin:0 50%;transform:scaleX(0);animation:progress linear both;animation-timeline:scroll(root)}
+}
+
+/* ---------- phones: trim the always-on extras ---------- */
+@media (hover:none){
+  .l-circles .ph::after,.l-cine .im img{animation:none}
+  .fdw::after{animation-duration:3.6s}
+}
+@media (prefers-reduced-motion:reduce){.rise{display:none}}
