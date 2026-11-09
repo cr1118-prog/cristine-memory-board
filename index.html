@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cristine’s Memory Board</title>
+<meta name="description" content="A little album, one Kuromi folder at a time.">
+<meta name="theme-color" content="#f5efff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/gallery.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/motion.css">
+</head>
+<body>
+
+<!-- Kuromi head, reused everywhere -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="gh" cx=".5" cy=".3" r=".8"><stop offset="0" stop-color="#4b3278"/><stop offset="1" stop-color="#1a0f2e"/></radialGradient>
+    <radialGradient id="gf" cx=".5" cy=".35" r=".75"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#efe6fb"/></radialGradient>
+    <radialGradient id="gp" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ffc9e5"/><stop offset="1" stop-color="#ff7fc0"/></radialGradient>
+  </defs>
+  <symbol id="kuromi" viewBox="0 0 120 90">
+    <g><animateTransform attributeName="transform" type="rotate" values="0 36 50;-5 36 50;0 36 50;3 36 50;0 36 50" dur="3.6s" repeatCount="indefinite"/>
+      <path d="M36 52C16 42 3 20 9 6c3-6 15-3 23 8 7 9 11 23 12 38z" fill="url(#gh)"/>
+      <path d="M30 42C21 33 15 21 17 13c4-1 11 6 14 14 2 5 3 10 3 15z" fill="#ff9ccf"/>
+      <path d="M10 8c0 4 1 8 3 12" stroke="#7a5cb5" stroke-width="1.4" fill="none" stroke-linecap="round" opacity=".7"/></g>
+    <g><animateTransform attributeName="transform" type="rotate" values="0 84 50;5 84 50;0 84 50;-3 84 50;0 84 50" dur="3.6s" begin="-1.2s" repeatCount="indefinite"/>
+      <path d="M84 52c20-10 33-32 27-46-3-6-15-3-23 8-7 9-11 23-12 38z" fill="url(#gh)"/>
+      <path d="M90 42c9-9 15-21 13-29-4-1-11 6-14 14-2 5-3 10-3 15z" fill="#ff9ccf"/>
+      <path d="M110 8c0 4-1 8-3 12" stroke="#7a5cb5" stroke-width="1.4" fill="none" stroke-linecap="round" opacity=".7"/></g>
+    <ellipse cx="60" cy="56" rx="44" ry="32" fill="url(#gh)"/>
+    <path d="M25 48q8-15 26-18" stroke="#8a6cc8" stroke-width="2.2" fill="none" stroke-linecap="round" opacity=".5"/>
+    <ellipse cx="60" cy="66" rx="31" ry="21" fill="url(#gf)" stroke="#d9ccf6"/>
+    <circle cx="60" cy="38" r="8.5" fill="url(#gp)"/><rect x="55" y="43" width="10" height="6" rx="2.5" fill="url(#gp)"/>
+    <circle cx="56.5" cy="37.5" r="2.1" fill="#1f1233"/><circle cx="63.5" cy="37.5" r="2.1" fill="#1f1233"/>
+    <path d="M60 40.5l-1.2 2h2.4zM57.6 46v2.6M60 46v2.6M62.4 46v2.6" stroke="#d94f9c" stroke-width=".8" fill="#1f1233"/>
+    <circle cx="56.5" cy="33.6" r="1.3" fill="#fff"><animate attributeName="opacity" values="1;.2;1" dur="2.4s" repeatCount="indefinite"/></circle>
+    <path d="M42 58q6-4 12-1M78 58q-6-4-12-1" stroke="#1f1233" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <ellipse cx="49" cy="65" rx="3.8" ry="4" fill="#1f1233"><animate attributeName="ry" values="4;4;4;.4;4" keyTimes="0;.88;.92;.96;1" dur="4.5s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="71" cy="65" rx="3.8" ry="4" fill="#1f1233"><animate attributeName="ry" values="4;4;4;.4;4" keyTimes="0;.88;.92;.96;1" dur="4.5s" repeatCount="indefinite"/></ellipse>
+    <circle cx="50.2" cy="63.4" r="1.3" fill="#fff"/><circle cx="72.2" cy="63.4" r="1.3" fill="#fff"/>
+    <ellipse cx="60" cy="71" rx="3.4" ry="2.4" fill="#ff7fc0"/><ellipse cx="59" cy="70.2" rx="1.2" ry=".7" fill="#fff" opacity=".8"/>
+    <path d="M52 76q8 6 16 0" stroke="#1f1233" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M63.5 79l1.6 3.2 1.8-4z" fill="#fff" stroke="#1f1233" stroke-width=".8" stroke-linejoin="round"/>
+    <ellipse cx="38" cy="74" rx="4.8" ry="3.2" fill="#ffb3da" opacity=".75"/><ellipse cx="82" cy="74" rx="4.8" ry="3.2" fill="#ffb3da" opacity=".75"/>
+    <circle cx="34" cy="83" r="6.5" fill="#fff" stroke="#d9ccf6"/><circle cx="86" cy="83" r="6.5" fill="#fff" stroke="#d9ccf6"/>
+  </symbol>
+</svg>
+
+<div class="bg" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i><div class="dots"></div><div id="fx"></div></div>
+
+<div id="loader" role="status" aria-live="polite">
+  <div>
+    <div class="orbit" aria-hidden="true"><i>✦</i><i>♥</i><i>✧</i></div>
+    <svg viewBox="0 0 120 90" aria-hidden="true"><use href="#kuromi"/></svg>
+    <p class="ld-title">Cristine’s Memory Board</p>
+    <p class="ld-sub">gathering the memories…</p>
+    <div class="ld-bar" aria-hidden="true"><i></i></div>
+    <button class="ld-skip" id="ld-skip" type="button">tap to step inside</button>
+  </div>
+</div>
+
+<header class="topbar" id="topbar">
+  <span class="brand">Cristine’s Memory Board</span>
+  <button class="back-btn" id="back" type="button">← Back to the board</button>
+</header>
+
+<main id="home" aria-labelledby="home-title">
+  <section class="hero">
+    <div class="hk"><svg viewBox="0 0 120 90" aria-hidden="true"><use href="#kuromi"/></svg><span class="bub" id="bub" aria-hidden="true">hi Cristine ♡</span></div>
+    <span class="kicker rv">a little album, one folder at a time</span>
+    <h1 class="title rv" id="home-title" tabindex="-1">Cristine’s <em>Memory</em> Board</h1>
+    <p class="greet rv">Hi welcome to my website!</p>
+    <p class="intro rv">I am Cristine Joy Guiyab, a 1st year BSCS student.</p>
+    <p class="lede rv">Pick a Kuromi folder to find the photos, stories and little moments tucked inside.</p>
+    <div class="pips rv" id="pips" aria-hidden="true"></div>
+    <p id="count" class="rv" role="status">0 of 8 folders opened</p>
+  </section>
+  <div class="tape" aria-hidden="true"><div class="tape-in"></div></div>
+  <nav aria-label="Memory folders"><ul class="board" id="board"></ul></nav>
+  <footer><svg class="fk" viewBox="0 0 120 90" aria-hidden="true"><use href="#kuromi"/></svg><p>made with love <i aria-hidden="true">♥</i></p></footer>
+</main>
+
+<main id="inside" aria-labelledby="ititle" hidden>
+  <header class="stage-h rv">
+    <svg class="peek" viewBox="0 0 120 90" aria-hidden="true"><use href="#kuromi"/></svg>
+    <span class="kicker" id="kicker">Folder</span>
+    <h1 id="ititle" tabindex="-1"></h1>
+    <p class="note" id="inote"></p>
+  </header>
+  <section class="sheet rv" id="body" aria-label="Folder contents"></section>
+</main>
+
+<dialog id="lb" aria-label="Photo viewer">
+  <span id="lb-n" aria-live="polite"></span>
+  <button id="lb-x" type="button" aria-label="Close photo viewer">✕</button>
+  <button class="lb-btn" id="lb-prev" type="button" aria-label="Previous photo">‹</button>
+  <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  <button class="lb-btn" id="lb-next" type="button" aria-label="Next photo">›</button>
+</dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<!-- Plain scripts (no build step, works by double-clicking index.html).
+     Order matters: data, helpers, components, then the app. -->
+<script src="js/data/media.js"></script>
+<script src="js/data/content.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/components/folder-card.js"></script>
+<script src="js/components/gallery.js"></script>
+<script src="js/components/lightbox.js"></script>
+<script src="js/components/tabs.js"></script>
+<script src="js/components/food.js"></script>
+<script src="js/components/movie.js"></script>
+<script src="js/components/song.js"></script>
+<script src="js/components/jokes.js"></script>
+<script src="js/components/secret.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
